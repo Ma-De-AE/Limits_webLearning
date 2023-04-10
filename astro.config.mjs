@@ -1,7 +1,7 @@
 import { defineConfig } from "astro/config";
 
 export default defineConfig({
-  site: "https://aerahrah.github.io",
+  site: "https://ma-de-ae.github.io/Limits_webLearning/",
   markdown: {
     drafts: true,
   },
