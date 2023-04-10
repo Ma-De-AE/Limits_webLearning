@@ -1,0 +1,105 @@
+@import "colors";
+
+@mixin font-scale($min-vw, $min-px) {
+  font-size: min($min-vw, $min-px);
+}
+// Fonts
+$title-font: "Bebas Neue", cursive;
+$text-font: "poppins", sans-serif;
+
+// Typography
+.title,
+.secondary-title,
+.primary-text {
+  font-family: $title-font;
+}
+
+.title,
+.secondary-title {
+  color: $font-primary-color;
+  font-weight: 800;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+  letter-spacing: 3px;
+  text-align: center;
+  letter-spacing: 5px;
+
+  // Responsive font size
+  font-size: min(26vw, 12.5rem);
+}
+
+.secondary-title {
+  margin-top: 3rem;
+  @include font-scale(22vw, 10rem);
+}
+
+.primary-text {
+  @include font-scale(6vw, 1.75rem);
+}
+
+.secondary-text {
+  @include font-scale(4vw, 1.5rem);
+  font-family: $text-font;
+}
+
+.tertiary-text {
+  @include font-scale(2vw, 1.25rem);
+  font-family: $text-font;
+}
+
+// Alert messages
+.alert {
+  text-align: center;
+  font-family: $title-font;
+  color: $primary-black;
+
+  a {
+    transition: all 100ms;
+    display: inline-block;
+    text-decoration: none !important;
+
+    &.black {
+      color: $primary-black;
+
+      &:hover {
+        color: $font-black-color;
+        transform: translateY(-1px);
+      }
+    }
+
+    &.green {
+      color: $primary-color-light-green;
+
+      &:hover {
+        color: $primary-color-light-green-shade;
+        transform: translateY(-1px);
+      }
+    }
+  }
+}
+
+// Notification messages
+.notify {
+  transition: all 100ms;
+  text-align: center;
+  font-family: $title-font;
+  color: $primary-black;
+  transform: scale(0);
+
+  &-failed {
+    color: $red-light-color;
+  }
+
+  &-success {
+    color: $primary-color-light-green;
+  }
+}
+
+// Utility classes
+.text-center {
+  text-align: center;
+}
+
+.red-text {
+  color: $red-light-color;
+}

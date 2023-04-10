@@ -1,0 +1,137 @@
+@import "./components/imports";
+
+* {
+  outline: 0;
+}
+body {
+  position: relative;
+}
+main {
+  min-height: 90vh;
+}
+
+#prescore-card {
+  width: min(500px, 80vw);
+}
+.prompt-card--container {
+  display: flex;
+  flex-direction: column;
+  padding: min(4vw, 1.5rem);
+  .btn {
+    width: min(55vw, 300px);
+  }
+}
+#pretesttaker-card {
+  width: min(85vw, 600px);
+  .btn {
+    width: min(55vw, 200px);
+  }
+}
+#reminder-card {
+  width: min(85vw, 600px);
+  .btn {
+    width: min(55vw, 350px);
+  }
+}
+#result-container {
+  margin-top: 1.5rem;
+  border-radius: 10px;
+  background-color: inherit;
+  width: min(100vw, 990px);
+  border: none;
+  box-shadow: none;
+  .quiz-container {
+    border: none !important;
+
+    &--title {
+      width: min(70vw, 700px);
+      background-color: #dfdbca;
+      border-radius: 20px;
+      color: $font-black-color;
+    }
+    &--correct,
+    &--wrong {
+      border-top-left-radius: 20px;
+      border-top-right-radius: 20px;
+      margin: 0;
+      width: 100%;
+    }
+    &--correct {
+      color: #dfdbca;
+      background-color: $primary-color;
+    }
+    &--wrong {
+      color: $red-font-color;
+      background-color: $red-dark-color;
+    }
+  }
+  .selectedAnsByUser {
+    background-color: $red-dark-color;
+    color: $red-font-color;
+  }
+
+  li {
+    pointer-events: none;
+  }
+  .quiz-container-body {
+    padding: min(5vw, 2rem);
+  }
+}
+.quiz-container {
+  display: block;
+  margin: min(4vw, 2rem) 0;
+  width: min(85vw, 600px);
+
+  .correct-answer {
+    background-color: $primary-color !important;
+    color: $font-white-secondary-color !important;
+    transform: scale(1.02);
+    box-shadow: 0 0 1px 2px rgba(100, 100, 100, 0.1);
+  }
+  .btn {
+    width: min(280px, 50vw);
+  }
+  .image-container {
+    img {
+      display: block;
+      width: min(200px, 40vw);
+      height: auto;
+      margin: 40px auto;
+      transform: scale(1.2);
+    }
+  }
+}
+
+.question-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  justify-items: center;
+  gap: min(3vw, 30px) 0;
+  margin-bottom: 30px;
+  padding: 0;
+  li {
+    list-style: none;
+  }
+}
+
+.answer {
+  display: none;
+  &-label {
+    transition: all 200ms;
+    font-weight: 700;
+    width: min(32vw, 250px);
+    background-color: #dfdbca;
+    border-radius: 20px;
+    padding: 20px min(1vw, 10px);
+    cursor: pointer;
+  }
+  &:checked + &-label {
+    background-color: #c9c5b6;
+    transform: scale(1.03);
+  }
+}
+
+div.footer {
+  display: none;
+}
